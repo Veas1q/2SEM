@@ -17,17 +17,18 @@ public class TestObject {
 //        System.out.println(list);
         List403ImplU<Integer> ss = new List403ImplU<Integer>();
         long start = System.nanoTime();
-        for (int i = 0; i < 1000000 ; i++) {
+        for (int i = 0; i < 2_000_000 ; i++) {
             Random random = new Random(100000000);
-            ss.add(random.nextInt());
+            ss.add(random.nextInt(),i);
         }
         long mid = System.nanoTime();
-        for (int i = 0; i < 100000 ; i++) {
+        // 438451435800 время удаления
+        for (int i = 100_000; i > 0 ; i--) {
             ss.remove(i);
         }
         long end = System.nanoTime();
 
-        System.out.println("Время добавления");
+        System.out.println("Время добавления в массиве");
         System.out.println(mid - start);
         System.out.println("Время удаления");
         System.out.println(end - mid);

@@ -25,7 +25,7 @@ public class List403ImplU<T> implements List403U<T>{
         return size;
     }
     @Override
-    public T remove(int position) throws IndexOutOfBoundsException{
+    public void remove(int position) throws IndexOutOfBoundsException{
         if (position > size - 1 || position < 0){
             throw new IndexOutOfBoundsException();
         }
@@ -34,7 +34,6 @@ public class List403ImplU<T> implements List403U<T>{
             arr[i] = arr[i + 1];
         }
         size--;
-        return temp;
     }
     @Override
     public void add(T element, int position) throws IndexOutOfBoundsException {

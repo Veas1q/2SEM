@@ -11,21 +11,19 @@ public class Main {
         s.addLast("2");
         s.addLast("3");
         s.addLast("4");
-        s.addIn("9",1);
 //        s.print();
         LinkedList<Integer> c = new LinkedList<Integer>();
         long start = System.nanoTime();
-        for (int i = 0; i < 1000000 ; i++) {
+        for (int i = 0; i < 2_000_000 ; i++) {
             Random random = new Random(100000000);
-            c.addLast(random.nextInt());
-
+            c.addFirst(random.nextInt());
         }
         long mid = System.nanoTime();
-        for (int i = 0; i < 100000 ; i++) {
+        for (int i = 0; i < 100_000 ; i++) {
             c.removeLast();
         }
         long end = System.nanoTime();
-        System.out.println("Время добавления в списках");
+        System.out.println("Время добавления в связных списках");
         System.out.println(mid - start);
         System.out.println();
         System.out.println("Время удаления в списках");
@@ -34,7 +32,6 @@ public class Main {
         System.out.println("Время добавления и удаления");
         System.out.println(end - start);
         System.out.println();
-        System.out.println("Разница суммы добавления и удаления двусвязного от списка ");
-        System.out.println(205656703700l - 136736800);
+
     }
 }

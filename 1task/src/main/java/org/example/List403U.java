@@ -19,7 +19,7 @@ public interface List403U<T>{
      * @param position
      * @return
      */
-    T remove(int position) throws IndexOutOfBoundsException;
+    void remove(int position) throws IndexOutOfBoundsException;
 
     /**
      * Возвращает размер списка

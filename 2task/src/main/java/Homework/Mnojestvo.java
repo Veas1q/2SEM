@@ -1,11 +1,13 @@
 package Homework;
 
-public class Mnojestvo<T> implements Set403<T>{
-    private Object[] mnojestvo;
+import java.lang.reflect.Array;
+
+public class Mnojestvo<T> implements Set403<T> {
+    private Object[] values;
     private int size;
 
-    public Mnojestvo(){
-        this.mnojestvo = new Object[1];
+    public Mnojestvo() {
+        values = new Object[10];
         size = 0;
     }
 
@@ -16,9 +18,9 @@ public class Mnojestvo<T> implements Set403<T>{
 
     @Override
     public boolean contains(T element) {
-        for (int i = 0; i < size ; i++) {
-            if (mnojestvo[i] == element){
-                 return true;
+        for (int i = 0; i < size; i++) {
+            if (values[i].equals(element)) {
+                return true;
             }
         }
         return false;
@@ -26,37 +28,57 @@ public class Mnojestvo<T> implements Set403<T>{
 
     @Override
     public void add(T element) {
-        for (int i = 0; i < size; i++) {
-            if (mnojestvo[i].equals(element)) {
-                return;
+        if (!contains(element)) {
+            if (size >= values.length) {
+                grow();
             }
+            values[size++] = element;
         }
-        if (size == mnojestvo.length) {
-            T[] newArray = (T[]) new Object[mnojestvo.length * 2];
-            System.arraycopy(mnojestvo, 0, newArray, 0, mnojestvo.length);
-            mnojestvo = newArray;
-        }
-        mnojestvo[size] = element;
-        size++;
     }
 
     @Override
-    public T[] getAll() {
-        return (T[]) mnojestvo;
+    public T[] getAll(T[] c) {
+        T[] newVal = (T[])Array.newInstance(c.getClass().componentType(),size);
+        for (int i = 0; i < size; i++) {
+            newVal[i] = (T)values[i];
+        }
+
+        System.out.println(newVal.getClass());
+        return newVal;
     }
-    public T get(int index){
-        return (T)(mnojestvo[index]);
-    }
+
     @Override
     public T remove(T element) {
-        for (int i = 0; i < size ; i++) {
-            if (mnojestvo[i].equals(element)){
-                mnojestvo[i] = null;
-                size--;
-                return element;
+        Object[] newValues = new Object[size];
+        int j = 0;
+        T answer = null;
+        for (int i = 0; i < size; i++) {
+            if (!values[i].equals(element)) {
+                newValues[j] = values[i];
+                j++;
+            } else {
+                answer = element;
             }
         }
-        return null;
+        values = newValues;
+        size--;
+        return answer;
+    }
+
+    private void grow() {
+        Object[] newValues = new Object[(int) (size*1.5)];
+        for (int i = 0; i < size; i++) {
+            newValues[i] = values[i];
+        }
+        values = newValues;
+    }
+
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < size; i++) {
+            stringBuilder.append(values[i].toString()).append(" ");
+        }
+        return stringBuilder.toString();
     }
 
 }

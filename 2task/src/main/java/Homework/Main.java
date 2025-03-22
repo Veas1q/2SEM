@@ -4,17 +4,18 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Mnojestvo<Object> p = new Mnojestvo<Object>();
+        Mnojestvo<Integer> p = new Mnojestvo<Integer>();
         p.add(1);
-        p.add("2");
-        p.add(23);
-        p.add(true);
-        p.add('h');
+        p.add(3);
+        p.add(6);
         p.add(1);
-        System.out.println(p.remove(1));
-        System.out.println(p.get(0));
-//        p.getAll();
-//        System.out.println(Arrays.toString(p.getAll()));
+        p.add(3);
+        p.remove(1);
+        Integer a[] = p.getAll(new Integer[0]);
+        for(Integer i: a){
+            System.out.print(i + " ");
+        }
+        System.out.println();
         Person Ivan = new Person("Ivan", "Bondarenko", "Aleksandrovich", 18);
         Person Ivan2 = new Person("Ivan", "Bobrov", "Sergeevich", 17);
         Person Aleksandr = new Person("Aleksandr", "Isaev", "Alekseevich", 18);
@@ -22,10 +23,10 @@ public class Main {
         p1.add(Ivan);
         p1.add(Ivan2);
         p1.add(Aleksandr);
-        System.out.println(p1.size());
-        System.out.println(p1.get(0).equals(p1.get(1)));
-        System.out.println(p1.get(1).equals(p1.get(2)));
-        System.out.println(p1.get(0).equals(p1.get(2)));
+        Person aa[] = p1.getAll(new Person[0]);
+        for(Person i: aa){
+            System.out.println(i);
+        }
         
     }
 }

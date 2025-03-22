@@ -1,5 +1,7 @@
 package Homework;
 
+import javax.naming.Name;
+
 public class Person {
     private int age;
     private String name;
@@ -62,6 +64,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Full Name: " + name + " " + secondName + " " + lastName  + ". Age: " + age;
     }
 }
