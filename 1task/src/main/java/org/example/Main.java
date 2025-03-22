@@ -24,5 +24,6 @@ public class Main {
         System.out.println((p.size()));
         p.remove(3);
         p.print();
+
     }
 }
