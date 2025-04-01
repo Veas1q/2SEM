@@ -12,77 +12,7 @@ public class TransportService {
         this.file = new File(file);
     }
 
-//    public  List403U<T> sort( String b){
-//        if (b.equals("номеру-")) {
-//            for (int i = 0; i < resault.size(); i++) {
-//                for (int j = 0; j < resault.size(); j++) {
-//                    if (resault.get(i).getIntNumber() > resault.get(j).getIntNumber()) {
-//                        resault.swap(i, j);
-//                    }
-//                }
-//            }
-//        } else if (b.equals("номеру+")) {
-//            for (int i = 0; i < resault.size(); i++) {
-//                for (int j = 0; j < resault.size(); j++) {
-//                    if (resault.get(i).getIntNumber() < resault.get(j).getIntNumber()) {
-//                        resault.swap(i, j);
-//                    }
-//                }
-//            }
-//        }else if (b.equals("времени начала-")) {
-//            for (int i = 0; i < resault.size(); i++) {
-//                for (int j = 0; j < resault.size(); j++) {
-//                    if (resault.get(i).getIntWorkTimeBegin() > resault.get(j).getIntWorkTimeBegin()) {
-//                        resault.swap(i, j);
-//                    }
-//                }
-//            }
-//        }else if (b.equals("времени начала+")) {
-//            for (int i = 0; i < resault.size(); i++) {
-//                for (int j = 0; j < resault.size(); j++) {
-//                    if (resault.get(i).getIntWorkTimeBegin() < resault.get(j).getIntWorkTimeBegin()) {
-//                        resault.swap(i, j);
-//                    }
-//                }
-//            }
-//        }else if (b.equals("времени конца-")) {
-//            for (int i = 0; i < resault.size(); i++) {
-//                for (int j = 0; j < resault.size(); j++) {
-//                    if (resault.get(i).getIntWorkTimeEnd() > resault.get(j).getIntWorkTimeEnd()) {
-//                        resault.swap(i, j);
-//                    }
-//                }
-//            }
-//        }else if (b.equals("времени конца+")) {
-//            for (int i = 0; i < resault.size(); i++) {
-//                for (int j = 0; j < resault.size(); j++) {
-//                    if (resault.get(i).getIntWorkTimeEnd() < resault.get(j).getIntWorkTimeEnd()) {
-//                        resault.swap(i, j);
-//                    }
-//                }
-//            }
-//        }
-//        else if (b.equals("номеру маршрута-")) {
-//            for (int i = 0; i < resault.size(); i++) {
-//                for (int j = 0; j < resault.size(); j++) {
-//                    if (resault.get(i).getIntRouteNumber() > resault.get(j).getIntRouteNumber()) {
-//                        resault.swap(i, j);
-//                    }
-//                }
-//            }
-//        }else if (b.equals("номеру маршрута+")) {
-//            for (int i = 0; i < resault.size(); i++) {
-//                for (int j = 0; j < resault.size(); j++) {
-//                    if (resault.get(i).getIntRouteNumber() < resault.get(j).getIntRouteNumber()) {
-//                        resault.swap(i, j);
-//                    }
-//                }
-//            }
-//        }
-//        return resault;
-//    }
-
-    public List403U<Transport> readAll (String b) throws FileNotFoundException {
+    public List403U<Transport> readAll () throws FileNotFoundException {
         Scanner s = new Scanner(file);
         if (s.hasNextLine()){
             s.nextLine();
@@ -100,76 +30,11 @@ public class TransportService {
                     }
             );
         }
-        if (b.equals("номеру-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntNumber() > resault.get(j).getIntNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        } else if (b.equals("номеру+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntNumber() < resault.get(j).getIntNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени начала-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeBegin() > resault.get(j).getIntWorkTimeBegin()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени начала+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeBegin() < resault.get(j).getIntWorkTimeBegin()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени конца-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeEnd() > resault.get(j).getIntWorkTimeEnd()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени конца+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeEnd() < resault.get(j).getIntWorkTimeEnd()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }
-        else if (b.equals("номеру маршрута-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntRouteNumber() > resault.get(j).getIntRouteNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("номеру маршрута+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntRouteNumber() < resault.get(j).getIntRouteNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }
+
         s.close();
         return resault;
     }
-    public List403U<Bus> readAllBus(String b) throws FileNotFoundException {
+    public List403U<Bus> readAllBus() throws FileNotFoundException {
         Scanner s = new Scanner(file);
         if (s.hasNextLine()){
             s.nextLine();
@@ -182,76 +47,11 @@ public class TransportService {
                 resault.add(new Bus(str[1], str[2], str[3], str[4]));
             }
         }
-        if (b.equals("номеру-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntNumber() > resault.get(j).getIntNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        } else if (b.equals("номеру+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntNumber() < resault.get(j).getIntNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени начала-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeBegin() > resault.get(j).getIntWorkTimeBegin()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени начала+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeBegin() < resault.get(j).getIntWorkTimeBegin()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени конца-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeEnd() > resault.get(j).getIntWorkTimeEnd()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени конца+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeEnd() < resault.get(j).getIntWorkTimeEnd()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }
-        else if (b.equals("номеру маршрута-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntRouteNumber() > resault.get(j).getIntRouteNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("номеру маршрута+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntRouteNumber() < resault.get(j).getIntRouteNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }
+
         s.close();
         return resault;
     }
-    public List403U<Tram> readAllTram (String b) throws FileNotFoundException {
+    public List403U<Tram> readAllTram () throws FileNotFoundException {
         Scanner s = new Scanner(file);
         if (s.hasNextLine()){
             s.nextLine();
@@ -264,77 +64,11 @@ public class TransportService {
                 resault.add(new Tram(str[1], str[2], str[3], str[4]));
             }
         }
-        if (b.equals("номеру-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntNumber() > resault.get(j).getIntNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        } else if (b.equals("номеру+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntNumber() < resault.get(j).getIntNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени начала-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeBegin() > resault.get(j).getIntWorkTimeBegin()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени начала+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeBegin() < resault.get(j).getIntWorkTimeBegin()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени конца-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeEnd() > resault.get(j).getIntWorkTimeEnd()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени конца+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeEnd() < resault.get(j).getIntWorkTimeEnd()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }
-        else if (b.equals("номеру маршрута-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntRouteNumber() > resault.get(j).getIntRouteNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("номеру маршрута+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntRouteNumber() < resault.get(j).getIntRouteNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }
 
         s.close();
         return resault;
     }
-    public List403U<Trolleybus> readAllTrolleybus (String b) throws FileNotFoundException {
+    public List403U<Trolleybus> readAllTrolleybus () throws FileNotFoundException {
         Scanner s = new Scanner(file);
         if (s.hasNextLine()){
             s.nextLine();
@@ -347,72 +81,7 @@ public class TransportService {
                 resault.add(new Trolleybus(str[1], str[2], str[3], str[4]));
             }
         }
-        if (b.equals("номеру-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntNumber() > resault.get(j).getIntNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        } else if (b.equals("номеру+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntNumber() < resault.get(j).getIntNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени начала-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeBegin() > resault.get(j).getIntWorkTimeBegin()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени начала+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeBegin() < resault.get(j).getIntWorkTimeBegin()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени конца-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeEnd() > resault.get(j).getIntWorkTimeEnd()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("времени конца+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntWorkTimeEnd() < resault.get(j).getIntWorkTimeEnd()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }
-        else if (b.equals("номеру маршрута-")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntRouteNumber() > resault.get(j).getIntRouteNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }else if (b.equals("номеру маршрута+")) {
-            for (int i = 0; i < resault.size(); i++) {
-                for (int j = 0; j < resault.size(); j++) {
-                    if (resault.get(i).getIntRouteNumber() < resault.get(j).getIntRouteNumber()) {
-                        resault.swap(i, j);
-                    }
-                }
-            }
-        }
+
         s.close();
         return resault;
     }

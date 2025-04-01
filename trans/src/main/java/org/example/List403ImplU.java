@@ -1,5 +1,5 @@
 package org.example;
-
+import java.util.Comparator;
 public class List403ImplU<T> implements List403U<T>{
     private  Object arr[];
     private int size;
@@ -8,6 +8,7 @@ public class List403ImplU<T> implements List403U<T>{
         this.arr = new Object[10];
         this.size = 0;
     }
+
     public void swap(int x , int y){
         Object temp = arr[x];
         arr[x]= arr[y];
@@ -78,5 +79,14 @@ public class List403ImplU<T> implements List403U<T>{
             stringBuilder.append(arr[i]).append(" ");
         }
         return stringBuilder.toString();
+    }
+    public void sort(Comparator<T> comparator) {
+        for (int i = 0; i < size(); i++) {
+            for (int j = i + 1; j < size(); j++) {
+                if (comparator.compare(get(i), get(j )) > 0) {
+                    swap(i, j );  // Замена через swap()
+                }
+            }
+        }
     }
 }

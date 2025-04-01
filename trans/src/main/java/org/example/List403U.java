@@ -1,5 +1,5 @@
 package org.example;
-
+import java.util.Comparator;
 public interface List403U<T>{
     /**
      * Метод добавляет элемент в конец списка
@@ -37,5 +37,6 @@ public interface List403U<T>{
     /**
      * сортировка списка (ask = true - по возрастанию)
      */
+    void sort(Comparator<T> comparator);
 }
 
