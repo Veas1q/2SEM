@@ -1,4 +1,4 @@
-package Homework;
+package org.example;
 
 import java.lang.reflect.Array;
 

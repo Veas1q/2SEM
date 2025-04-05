@@ -13,6 +13,7 @@
         <module>2task</module>
         <module>2task/3task</module>
         <module>trans</module>
+        <module>Map</module>
     </modules>
 
     <properties>

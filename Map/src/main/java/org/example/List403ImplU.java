@@ -1,8 +1,5 @@
 package org.example;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
-
 public class List403ImplU<T> implements List403U<T>{
     private  Object arr[];
     private int size;

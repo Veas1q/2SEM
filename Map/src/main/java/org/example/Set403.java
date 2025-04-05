@@ -1,4 +1,4 @@
-package Homework;
+package org.example;
 
 public interface Set403<T> {
     int size();
