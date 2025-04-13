@@ -1,6 +1,8 @@
 package org.example;
 
-public interface Map403<K, V> {
+import java.util.Iterator;
+
+public interface Map403<K, V> extends Iterator<Map403.Entry<K, V>> {
     void put (K key, V value);
 
     V get(K key);
@@ -27,5 +29,7 @@ public interface Map403<K, V> {
         K getKey();
         V getValue();
     }
+
+
 }
 

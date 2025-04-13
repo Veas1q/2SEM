@@ -6,6 +6,16 @@ public class MapImpl<K,V> implements  Map403<K,V> {
 
     private int size;
 
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
+
+    @Override
+    public Entry<K, V> next() {
+        return null;
+    }
+
     private class Node<K,V> {
         Entry<K,V> value;
         Node<K,V> next;
