@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.*;
+import java.util.function.Function;
+
 public class MapImpl<K,V> implements  Map403<K,V> {
 
     private Node<K,V>[] array;
@@ -191,8 +194,24 @@ public class MapImpl<K,V> implements  Map403<K,V> {
         }
         return null;
     }
+    @Override
+    public <R> List403U<R> map(Function<V, R> function){
+        List403U<R> newL = new List403ImplU<>();
+        for (V p: values()){
+            R convertedItem = function.apply(p);
+            newL.add(convertedItem);
+        }
+        return newL;
+    }
 
-
+//    @Override
+//    public <R> Set<R> map(Function<V, R> function) {
+//        Set<R> resultSet = new HashSet<>();
+//        for (Entry<K, V> entry : this.entrySet()) {
+//            resultSet.add(function.apply(entry.getValue()));
+//        }
+//        return resultSet;
+//    }
     @Override
     public void clear() {
         array = new Node[16];

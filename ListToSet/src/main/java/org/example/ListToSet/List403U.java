@@ -1,6 +1,9 @@
-package org.example;
+package org.example.ListToSet;
 
-public interface List403U<T> extends Iterable<T>{
+import java.util.Set;
+import java.util.function.Function;
+
+public interface List403U<T>{
     /**
      * Метод добавляет элемент в конец списка
      * @param element
@@ -37,5 +40,7 @@ public interface List403U<T> extends Iterable<T>{
     /**
      * сортировка списка (ask = true - по возрастанию)
      */
+    <R> Set<R> map(Function<T, R> function);
 }
+
 

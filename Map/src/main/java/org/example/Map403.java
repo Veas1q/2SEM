@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.Iterator;
+import java.util.Set;
+import java.util.function.Function;
 
 public interface Map403<K, V> extends Iterator<Map403.Entry<K, V>> {
     void put (K key, V value);
@@ -22,7 +24,7 @@ public interface Map403<K, V> extends Iterator<Map403.Entry<K, V>> {
     V remove (K key);
 
     void clear();
-
+    <R> List403U<R> map(Function<V, R> function);
     interface  Entry<K, V>{
         void setKey(K key);
         void setValue(V value);

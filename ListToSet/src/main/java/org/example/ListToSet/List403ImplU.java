@@ -1,8 +1,10 @@
-package org.example;
+package org.example.ListToSet;
 
-import java.util.Iterator;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.function.Function;
 
-public class List403ImplU<T> implements List403U<T>, Iterable<T>{
+public class List403ImplU<T> implements List403U<T>{
     private  Object arr[];
     private int size;
 
@@ -78,19 +80,11 @@ public class List403ImplU<T> implements List403U<T>, Iterable<T>{
         return stringBuilder.toString();
     }
 
-    public Iterator<T> iterator(){
-        return new MyIter();
-    }
-    public class MyIter implements Iterator<T>{
-        int index = 0;
-        public boolean hasNext(){
-            return index < size;
+    public <R> Set<R> map(Function<T, R> function){
+        Set<R> set = new HashSet<>();
+        for (int i = 0; i < size ; i++) {
+            set.add(function.apply((T)arr[i]));
         }
-        public T next(){
-            if (!hasNext()){
-                throw new RuntimeException();
-            }
-            return (T) arr[index++];
-        }
+        return set;
     }
 }

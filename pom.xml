@@ -17,6 +17,9 @@
         <module>1task/Iterator</module>
         <module>Itera</module>
         <module>Func_Iter</module>
+        <module>ListToSet</module>
+        <module>StreamAPI</module>
+        <module>AISD</module>
     </modules>
 
     <properties>
@@ -25,4 +28,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.19.0-rc2</version>
+        </dependency>
+    </dependencies>
 </project>
