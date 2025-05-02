@@ -6,9 +6,13 @@ public class Person {
     private String gender;
     private Date birthdate;
     private String fromcity;
-
+    private String genderBirthday;
     public String getGender() {
         return gender;
+    }
+
+    public String getGenderBirthday(){
+        return (String)genderBirthday + getBirthdate();
     }
 
     public void setGender(String gender) {

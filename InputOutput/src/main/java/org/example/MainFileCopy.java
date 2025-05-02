@@ -2,6 +2,7 @@ package org.example;
 
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class MainFileCopy {
@@ -30,11 +31,12 @@ public class MainFileCopy {
             byte[] buffer = new byte[1024];
             int r;
             while ((r = fis.read(buffer)) > -1) {
-                fos.write(buffer, 0, r);
+                fos.write(new String(buffer, 0 ,r).toUpperCase().getBytes(StandardCharsets.UTF_8));
             }
             fos.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
     }
 }

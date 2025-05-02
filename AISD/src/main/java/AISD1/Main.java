@@ -1,7 +1,8 @@
 package AISD1;
 
 import java.util.Arrays;
-
+import java.util.LinkedList;
+import java.util.List;
 
 
 public class Main {
@@ -19,30 +20,40 @@ public class Main {
         }
 //        System.out.println(Arrays.toString(masToSort));
 
-        char[] mas = {'[',']', '{', '}', '[',']'};
-        char[] mas1 = {'[',']', '[', ']', ']',']'};
-        char[] mas3 = {'[',']', '[',']'};
+        char[] mas = {'[', ']', '{', '}', '[', ']'};
+        char[] mas1 = {'[', ']', '(', ']', '(', ')'};
+        char[] mas3 = {'[', '[', ']', ']','[',']'};
 
 //        for (int i = 0; i < mas.length ; i++) {
 //            System.out.println((int)mas[i]);
 //        }
-        System.out.println(check(mas3));
+        System.out.println(checkWithLinkedList(mas3));
     }
 
-    public static boolean check(char[] mas) {
-        if (mas.length % 2 != 0 || mas[0] == (int)']' || mas[0] == (int) ')' || mas[0] == (int)'}' || mas[mas.length - 1] == '[' || mas[mas.length - 1] == '{' || mas[mas.length - 1] == '('){
+    public static boolean checkWithLinkedList(char[] chars) {
+        if (chars.length % 2 != 0) {
             return false;
-
         }
-        for (int i = 0; i < mas.length - 1 ; i++) {
-            System.out.println(i);
-            if (!((int)mas[i] == ((int)mas[i + 1] - 1) || (int)mas[i] == ((int)mas[i + 1] - 2) ||
-                    ((int)mas[mas.length - 1 - i] - 1) == (int)mas[i] || ((int)mas[mas.length - 1 - i] - 2) == (int)mas[i]
-                ||((int)mas[mas.length - 1 - i] + 1) == (int)mas[i] || ((int)mas[mas.length - 1 - i] + 2) == (int)mas[i]
-                    ||(int)mas[i] == ((int)mas[i - 1] + 1) || (int)mas[i] == ((int)mas[i - 1] + 2))) {
-                return false;
+
+        List<Character> stack = new LinkedList<>();
+
+        for (char c : chars) {
+            if (c == '(' || c == '[' || c == '{') {
+                stack.add(c);
+            } else {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+
+                char top = stack.removeLast();
+                if (!((top == '(' && c == ')') ||
+                        (top == '[' && c == ']') ||
+                        (top == '{' && c == '}'))) {
+                    return false;
+                }
             }
         }
-        return true;
+
+        return stack.isEmpty();
     }
 }
