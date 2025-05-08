@@ -17,7 +17,7 @@ public class MainFileRead {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-        try (InputStream fis = new FileInputStream("C:\\Users\\Redmi\\IdeaProjects\\SecondSemestr\\bookings.json")) {
+        try (InputStream fis = new FileInputStream("C:\\Users\\Redmi\\IdeaProjects\\SecondSemestr\\med.csv")) {
             byte[] buffer = new byte[1024];
             int r; // кол-во реально прочитанных файлов
             long start = System.nanoTime();

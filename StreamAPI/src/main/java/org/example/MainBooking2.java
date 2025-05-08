@@ -14,9 +14,8 @@ public class MainBooking2{
         ObjectMapper mapper =  new ObjectMapper();
         Bookings bookings = mapper.readValue(new File("C:\\Users\\Redmi\\IdeaProjects\\SecondSemestr\\bookings.json"), Bookings.class);
 //        printFromSamara(bookings);
-        printPeople40_45Years(bookings);
-        printCityCountHotel(bookings);
         printCountUP(bookings);
+        System.out.println(printMapHotelCity(bookings));
 //        Map<String, Set<String>> res = printMapHotelCity(bookings);
 //        res.forEach((hotel, cities) ->
 //                System.out.println(hotel + ": " + cities));
@@ -100,9 +99,8 @@ public class MainBooking2{
     }
     public static void printCountUP(Bookings bookings){
         long all = bookings.getBookings().stream().count();
-
-        Set<String> p = bookings.getBookings().stream().map(Booking::getPerson).map(Person::getGenderBirthday).collect(Collectors.toSet());
-        System.out.println("Уникальных людей " + p.size());
+        Set<String> p = bookings.getBookings().stream().map(Booking::getPerson).filter(z -> z.getGenderBirthday() != null).map(Person::getGenderBirthday).collect(Collectors.toSet());
+        System.out.println("Уникальных людей " + (float)p.size());
     }
 
 

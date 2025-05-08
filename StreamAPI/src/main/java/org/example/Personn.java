@@ -3,9 +3,26 @@ package org.example;
 import java.util.Date;
 
 public class Personn {
+    private String name;
+    private int age;
     private String gender;
-    private Date birthdate;
-    private String fromcity;
+    private String fromCity;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public String getGender() {
         return gender;
@@ -15,19 +32,18 @@ public class Personn {
         this.gender = gender;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
+    public String getFromCity() {
+        return fromCity;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setFromCity(String fromCity) {
+        this.fromCity = fromCity;
     }
 
-    public String getFromcity() {
-        return fromcity;
-    }
-
-    public void setFromcity(String fromcity) {
-        this.fromcity = fromcity;
+    public Personn(String name, int age, String gender, String fromCity) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.fromCity = fromCity;
     }
 }

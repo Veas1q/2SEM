@@ -5,15 +5,19 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.awt.print.Book;
 import java.io.File;
 import java.io.IOException;
+import java.sql.Date;
 import java.util.BitSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MainBooking {
     public static void main(String[] args) throws IOException {
         ObjectMapper mapper =  new ObjectMapper();
         Bookings bookings = mapper.readValue(new File("C:\\Users\\Redmi\\IdeaProjects\\SecondSemestr\\bookings.json"), Bookings.class);
-        fromMoscow(bookings);
+//        fromMoscow(bookings);
     }
-
     public static void printCount(Bookings bookings){
         System.out.println(
                 bookings.getBookings().stream().count()

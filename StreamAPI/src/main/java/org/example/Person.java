@@ -11,9 +11,6 @@ public class Person {
         return gender;
     }
 
-    public String getGenderBirthday(){
-        return (String)genderBirthday + getBirthdate();
-    }
 
     public void setGender(String gender) {
         this.gender = gender;
@@ -36,5 +33,11 @@ public class Person {
     }
     public String toString(){
         return birthdate + "";
+    }
+    public String getGenderBirthday(){
+        if (getGender() != null && getBirthdate() != null){
+            return (String)getGender() + getBirthdate();
+        }
+        return null;
     }
 }

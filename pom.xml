@@ -20,6 +20,9 @@
         <module>ListToSet</module>
         <module>StreamAPI</module>
         <module>AISD</module>
+        <module>InputOutput</module>
+        <module>03.05.2025</module>
+        <module>AISDSemestrovka1</module>
     </modules>
 
     <properties>
