@@ -124,7 +124,6 @@ public class SegmentTree {
             maxTree[i] = Math.max(maxTree[2 * i], maxTree[2 * i + 1]);
         }
     }
-
     /**
      * Вычисляет сумму элементов на отрезке [leftIndex, rightIndex]
      * @param leftIndex левая граница отрезка
