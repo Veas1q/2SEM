@@ -7,7 +7,7 @@ public class Main {
 //       Сравнить суммы на двух отрезках:
 //        Сумма исходных элементов (sum_original = mas[i] + mas[i+1] + ... + mas[j]).
 //        Сумма после возведения в квадрат (sum_squared = mas[i]² + mas[i+1]² + ... + mas[j]²).
-//        Вывести процент отношения большей суммы к меньшей (с точностью до двух знаков после запятой).
+//        Вывести процент отношения большей суммы к меньшей.
 
         int[] mas = {1,2,3,4,5,6,7,8,9};
         SegmentTree segmentTree = new SegmentTree(mas);
@@ -23,8 +23,8 @@ public class Main {
 
 
 
-//        ArrayGenerator.generateArrays();
-//        ArrayTester.testerArrays();
+        ArrayGenerator.generateArrays();
+        ArrayTester.testerArrays();
 
     }
 }

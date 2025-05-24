@@ -16,13 +16,10 @@ public class ArrayTester {
         try {
             resultsWriter = new PrintWriter(new FileWriter("segment_tree_results.csv"));
             // Записываем расширенный заголовок CSV
-            resultsWriter.println("Размер массива,Время создания (нс),Итерации создания," +
-                    "Время добавления (нс),Итерации добавления," +
-                    "Время удаления (нс),Итерации удаления," +
-                    "Время запросов суммы (нс),Итерации запросов суммы," +
-                    "Время запросов минимума (нс),Итерации запросов минимума," +
-                    "Время запросов максимума (нс),Итерации запросов максимума," +
-                    "Время обновлений (нс),Итерации обновлений");
+            resultsWriter.println("Размер массива,Время создания (нс)," +
+                    "Время добавления (нс)," +
+                    "Время удаления (нс)," +
+                    "Время запросов суммы (нс);");
         } catch (IOException e) {
             System.err.println("Ошибка при создании файла результатов: " + e.getMessage());
             return;
@@ -78,15 +75,12 @@ public class ArrayTester {
         long startTime = System.nanoTime();
         SegmentTree st = new SegmentTree(array);
         long creationTime = System.nanoTime() - startTime;
-        int creationIterations = size; // Итерации при построении дерева
 
         // Тестирование добавления
         startTime = System.nanoTime();
-        int addIterations = 0;
         for (int i = 0; i < size/10; i++) {
             // Каждое добавление вызывает rebuildSegmentTree(), который делает n итераций
             st.add(random.nextInt(), random.nextInt(size));
-            addIterations += size; // Учитываем итерации перестроения дерева
         }
         long addTime = System.nanoTime() - startTime;
 
@@ -99,59 +93,21 @@ public class ArrayTester {
         }
         long removeTime = System.nanoTime() - startTime;
 
-
-        // Тестирование запросов суммы
         startTime = System.nanoTime();
-        int sumQueryIterations = 0;
-        for (int i = 0; i < size/10; i++) {
-            int left = random.nextInt(size);
-            int right = left + random.nextInt(size - left);
-            st.querySum(left, right);
-            sumQueryIterations += (int)(Math.log(size)/Math.log(2)) + 1; // Оценка итераций
-        }
+        // Тестирование запросов суммы
+        int left = 0;
+        int right = size / 10;
+        st.querySum(left, right);
         long sumQueryTime = System.nanoTime() - startTime;
 
-        // Тестирование запросов минимума
-        startTime = System.nanoTime();
-        int minQueryIterations = 0;
-        for (int i = 0; i < size/10; i++) {
-            int left = random.nextInt(size);
-            int right = left + random.nextInt(size - left);
-            st.queryMin(left, right);
-            minQueryIterations += (int)(Math.log(size)/Math.log(2)) + 1;
-        }
-        long minQueryTime = System.nanoTime() - startTime;
-
-        // Тестирование запросов максимума
-        startTime = System.nanoTime();
-        int maxQueryIterations = 0;
-        for (int i = 0; i < size/10; i++) {
-            int left = random.nextInt(size);
-            int right = left + random.nextInt(size - left);
-            st.queryMax(left, right);
-            maxQueryIterations += (int)(Math.log(size)/Math.log(2)) + 1;
-        }
-        long maxQueryTime = System.nanoTime() - startTime;
-
-        // Тестирование обновлений
-        startTime = System.nanoTime();
-        int updateIterations = 0;
-        for (int i = 0; i < size/10; i++) {
-            st.update(random.nextInt(size), random.nextInt());
-            updateIterations += (int)(Math.log(size)/Math.log(2)) + 1;
-        }
-        long updateTime = System.nanoTime() - startTime;
 
         // Записываем результаты
-        resultsWriter.printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d, %d, %d%n",
+        resultsWriter.printf("%d,%d, %d, %d, %d%n",
                 size,
-                creationTime, creationIterations,
-                addTime, addIterations,
-                removeTime, removeIterations,
-                sumQueryTime, sumQueryIterations,
-                minQueryTime, minQueryIterations,
-                maxQueryTime, maxQueryIterations,
-                updateTime, updateIterations);
+                creationTime,
+                addTime,
+                removeTime,
+                sumQueryTime);
 
         resultsWriter.flush();
     }
