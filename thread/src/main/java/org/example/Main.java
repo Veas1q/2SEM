@@ -1,12 +1,12 @@
 package org.example;
 
-public class Main2 {
+public class Main {
     public static void main(String[] args) {
-        Thread task1 = new Thread( new MyTask2(1));
-        Thread task2 = new Thread( new MyTask2(2));
-        Thread task3 = new Thread( new MyTask2(3));
-        Thread task4 = new Thread( new MyTask2(4));
-        Thread task5 = new Thread( new MyTask2(5));
+        Thread task1 = new MyTaskTread(1);
+        Thread task2 = new MyTaskTread(2);
+        Thread task3 = new MyTaskTread(3);
+        Thread task4 = new MyTaskTread(4);
+        Thread task5 = new MyTaskTread(5);
         task1.start();
         task2.start();
         task3.start();
@@ -15,9 +15,9 @@ public class Main2 {
 
     }
     //описать задачу
-    static class MyTask2 implements Runnable{
+    static class MyTaskTread extends Thread{
         private int index;
-        public MyTask2(int index){
+        public MyTaskTread(int index){
             this.index = index;
         }
         //задача
