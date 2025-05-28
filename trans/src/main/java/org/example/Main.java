@@ -8,7 +8,7 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        TransportService p = new TransportService("C:\\Users\\Redmi\\IdeaProjects\\SecondSemestr\\trans\\transport.csv");
+        TransportService p = new TransportService("C:\\Users\\sanya\\IdeaProjects\\2SEM\\trans\\transport.csv");
         String sortRoute_ = "номеру маршрута-";
         List403U<Tram> busList = p.readAllTram();
         TransportPrintService pp = new TransportPrintService();

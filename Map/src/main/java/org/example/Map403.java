@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.function.Function;
 
-public interface Map403<K, V> extends Iterator<Map403.Entry<K, V>> {
+public interface Map403<K, V> extends Iterable<Map403.Entry<K, V>> {
     void put (K key, V value);
 
     V get(K key);
@@ -31,6 +31,7 @@ public interface Map403<K, V> extends Iterator<Map403.Entry<K, V>> {
         K getKey();
         V getValue();
     }
+
 
 
 }
