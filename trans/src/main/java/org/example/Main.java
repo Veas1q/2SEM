@@ -18,7 +18,6 @@ public class Main {
 
         Mnojestvo setCountRoute = new Mnojestvo();
         Mnojestvo setCountNumber = new Mnojestvo();
-        Mnojestvo setRouteCountT = new Mnojestvo();
         for (int i = 0; i < transportList403U.size()  ; i++) {
             setCountRoute.add(transportList403U.get(i).routeNumber);
 

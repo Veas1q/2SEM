@@ -22,8 +22,10 @@
         <module>InputOutput</module>
         <module>03.05.2025</module>
         <module>AISDSemestrovka1</module>
-        <module>Test</module>
-        <module>Net</module>
+        <module>AISD_SEMESTROVKA_SECOND</module>
+        <module>thread</module>
+        <module>Serealization</module>
+        <module>OBHOD</module>
     </modules>
 
     <properties>
