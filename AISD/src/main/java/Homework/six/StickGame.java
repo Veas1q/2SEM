@@ -1,38 +1,40 @@
 package Homework.six;
 import java.util.*;
+import java.util.*;
 
 public class StickGame {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        List<List<Integer>> moves = new ArrayList<>(n + 1);
-        moves.add(new ArrayList<>()); // для i=0 (не используется)
+        // Пример входных данных
+        Map<Integer, List<Integer>> moves = new HashMap<>();
+        moves.put(1, List.of(1));
+        moves.put(2, List.of(1, 2));
+        moves.put(3, List.of(1, 2, 3));
 
-        // Считываем допустимые ходы для каждого i
-        for (int i = 1; i <= n; i++) {
-            int k_i = scanner.nextInt();
-            List<Integer> currentMoves = new ArrayList<>(k_i);
-            for (int j = 0; j < k_i; j++) {
-                currentMoves.add(scanner.nextInt());
-            }
-            moves.add(currentMoves);
-        }
+        int n = 4;
+        System.out.println(whoWins(n, moves));  // Выведет "Первый"
+    }
 
-        // Динамическое программирование: dp[i] = W/L
-        boolean[] dp = new boolean[n + 1]; // true = W, false = L
-        dp[0] = false; // L (проигрышная позиция)
+    public static String whoWins(int n, Map<Integer, List<Integer>> moves) {
+        // dp[i] = true, если текущий игрок может выиграть из позиции i
+        boolean[] dp = new boolean[n + 1];
+
+        // Базовый случай: если палочек нет - текущий игрок проигрывает
+        dp[0] = false;
 
         for (int i = 1; i <= n; i++) {
-            boolean isWinning = false;
+            if (!moves.containsKey(i)) continue;
+
+            // Проверяем все возможные ходы из текущей позиции
             for (int move : moves.get(i)) {
+                // Если можем сделать ход, ведущий в проигрышную позицию для противника
                 if (i - move >= 0 && !dp[i - move]) {
-                    isWinning = true;
-                    break;
+                    dp[i] = true;
+                    break;  // Достаточно одного выигрышного хода
                 }
             }
-            dp[i] = isWinning;
         }
 
-        System.out.println(dp[n] ? "First" : "Second");
+        return dp[n] ? "Первый" : "Второй";
     }
 }
