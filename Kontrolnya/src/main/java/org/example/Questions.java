@@ -1,5 +1,8 @@
 package org.example;
-class Questions {
+import java.io.Serializable;
+
+
+class Questions implements Serializable {
     String question1;
     String[] response1;
     int goodResponseIndex1;

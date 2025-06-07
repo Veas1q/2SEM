@@ -1,4 +1,10 @@
 package org.example;
 
-public class Game {
+import java.io.Serializable;
+import java.util.Date;
+
+public class Game implements Serializable {
+    String playerName;
+    Integer score;
+    Date gameDate;
 }
