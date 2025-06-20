@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="2task" />
+        <module name="C" />
+        <module name="Kontrolnya" />
+        <module name="AISD_SEMESTROVKA_SECOND" />
+        <module name="JsonMapper" />
+        <module name="OBHOD" />
+        <module name="Itera" />
+        <module name="ListToSet" />
+        <module name="3tasksTest" />
+        <module name="threadd" />
+        <module name="1task" />
+        <module name="InputOutput" />
+        <module name="MusicPlayer" />
+        <module name="AISD" />
+        <module name="Func_Iter" />
+        <module name="Posledovatelnost" />
+        <module name="Reflection" />
+        <module name="Serealization" />
+        <module name="lab2_10_test" />
+        <module name="AISDSemestrovka1" />
+        <module name="StreamAPI" />
+        <module name="3task" />
+        <module name="Net" />
+        <module name="Map" />
+        <module name="db" />
+        <module name="trans" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="03.05.2025" target="23" />
+      <module name="AISD_SEMESTROVKA_2" target="23" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
