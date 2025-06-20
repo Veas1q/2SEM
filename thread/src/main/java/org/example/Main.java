@@ -1,17 +1,16 @@
 package org.example;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread task1 = new MyTaskTread(1);
         Thread task2 = new MyTaskTread(2);
         Thread task3 = new MyTaskTread(3);
         Thread task4 = new MyTaskTread(4);
         Thread task5 = new MyTaskTread(5);
-        task1.start();
-        task2.start();
-        task3.start();
-        task4.start();
-        task5.start();
+        Thread[] tasks = {task1, task2, task3, task4, task5};
+        for (int i = 0; i < 5; i++) {
+            tasks[i].start();
+        }
 
     }
     //описать задачу

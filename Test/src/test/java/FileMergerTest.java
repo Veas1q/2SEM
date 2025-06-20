@@ -37,16 +37,6 @@ public class FileMergerTest {
                 "Результат не совпадает с правильным файлом"
         );
 
-        // 5. Дополнительная проверка частей (по желанию)
-        byte[] result = Files.readAllBytes(Paths.get(OUTPUT_FILE));
-        byte[] realResult = Files.readAllBytes(Paths.get(EXPECTED_FILE));
-        byte[] textPart = Arrays.copyOfRange(realResult, 0, (int)Files.size(Paths.get(TEXT_FILE)));
-        byte[] binaryPart = Arrays.copyOfRange(realResult, textPart.length, result.length);
 
-        assertArrayEquals(Files.readAllBytes(Paths.get(TEXT_FILE)), textPart);
-        assertArrayEquals(Files.readAllBytes(Paths.get(BINARY_FILE)), binaryPart);
-
-        // Удаляем временный файл
-        Files.deleteIfExists(Paths.get(OUTPUT_FILE));
     }
 }

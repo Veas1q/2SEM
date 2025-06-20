@@ -43,6 +43,7 @@ public class ClientMessage {
                 byte[] buffer = new byte[size]; // готовим буфер нужного размера
                 is.read(buffer); // читаем сообщение
                 message = new String(buffer);
+                System.out.print("Сервер: ");
                 System.out.println(message);
 
                 if(message.equals("exit")) {

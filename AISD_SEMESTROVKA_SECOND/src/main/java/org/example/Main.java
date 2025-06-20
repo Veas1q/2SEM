@@ -9,15 +9,16 @@ public class Main {
 //        Сумма после возведения в квадрат (sum_squared = mas[i]² + mas[i+1]² + ... + mas[j]²).
 //        Вывести процент отношения большей суммы к меньшей.
 
-        int[] mas = {1,2,3,4,5,6,7,8,9};
+        int[] mas = {1,4,5,7,39};
         SegmentTree segmentTree = new SegmentTree(mas);
-        int i = 3;
-        int j = 7;
-        double originalSum = segmentTree.querySum(3,7);
+        int i = 0;
+        int j = 4;
+        System.out.println((segmentTree.querySum(0,4)));
+        double originalSum = segmentTree.querySum(0,4);
         for (int k = 3; k < j + 1 ; k++) {
             segmentTree.update(k,mas[k] * 2);
         }
-        double newSum = segmentTree.querySum(3,7);
+        double newSum = segmentTree.querySum(0,4);
         System.out.println(newSum / originalSum * 100 + "%");
 
 

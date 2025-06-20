@@ -8,9 +8,7 @@ public class MathUtil {
         return a + b;
     }
 
-    /**
-     * @return >0, a>b; 0, a=b; <0, a<b
-     */
+
     public static int compare(int a, int b) {
 /*
         if (a > b) return 1;
@@ -21,13 +19,6 @@ public class MathUtil {
         return a - b;
     }
 
-    /**
-     *
-     * @param a
-     * @param b
-     * @return
-     * @throws IllegalArgumentException
-     */
     public static int divide(int a, int b) throws IllegalArgumentException {
         if (b == 0)
             throw new IllegalArgumentException("Знаменатель не 0!");

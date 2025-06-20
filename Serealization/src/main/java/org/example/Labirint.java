@@ -1,5 +1,6 @@
 package org.example;
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Labirint implements Serializable {
@@ -67,6 +68,8 @@ public class Labirint implements Serializable {
         System.out.println("Выберите действие: ");
         System.out.println("1. Новая игра");
         System.out.println("2. Загрузить игру");
+        System.out.println("3. Выход");
+
         String strNameFile = "";
 
         int choice = scanner.nextInt();
@@ -74,30 +77,25 @@ public class Labirint implements Serializable {
         while (labirint == null) {
             if (choice == 1) {
                 labirint = new Labirint();
+                break;
             } else if (choice == 2) {
                 System.out.println("Введите имя файла: ");
-
                 strNameFile = scanner.nextLine();
-                boolean flag = true;
-                while (flag) {
-                    if (strNameFile == null) {
-                        System.out.println("Введите правильное имя файла");
-                    } else if (strNameFile.equals("ESC")) {
-                        flag = false;
-                    } else {
-                        try {
-                            FileInputStream fis = new FileInputStream(strNameFile);
-                            ObjectInputStream ois = new ObjectInputStream(fis);
-                            labirint = (Labirint) ois.readObject();
-                            flag = false;
-                        } catch (IOException | ClassNotFoundException e) {
-                            System.out.println("неправильное имя файла");
-                            flag = false;
-                        }
-                    }
+                if (strNameFile.equals("ESC")){
+                    System.out.println("Выход");
+                    System.exit(0);
                 }
-            } else {
-                System.out.println("Введите правильную команду");
+                try {
+                    FileInputStream fis = new FileInputStream(strNameFile);
+                    ObjectInputStream ois = new ObjectInputStream(fis);
+                    labirint = (Labirint) ois.readObject();
+                } catch (IOException | ClassNotFoundException e) {
+                    System.out.println("неправильное имя файла");
+                }
+            }
+            else if (choice == 3){
+                System.out.println("Выход");
+                break;
             }
         }
         String str = "";

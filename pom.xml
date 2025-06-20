@@ -20,12 +20,18 @@
         <module>StreamAPI</module>
         <module>AISD</module>
         <module>InputOutput</module>
-        <module>03.05.2025</module>
         <module>AISDSemestrovka1</module>
         <module>AISD_SEMESTROVKA_SECOND</module>
         <module>thread</module>
         <module>Serealization</module>
         <module>OBHOD</module>
+        <module>MusicPlayer</module>
+        <module>Kontrolnya</module>
+        <module>C</module>
+        <module>Reflection</module>
+        <module>3tasksTest</module>
+        <module>JsonMapper</module>
+        <module>Posledovatelnost</module>
     </modules>
 
     <properties>

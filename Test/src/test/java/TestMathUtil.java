@@ -17,6 +17,12 @@ public class TestMathUtil {
     }
 
     @Test
+    void testSort() {
+        assertArrayEquals(new int[] {1,2,3,4,5,6,7,8},
+                mathUtil.sort(new int[] {8,3,2,5,4,6,7,1}));
+    }
+
+    @Test
     void testSum() {
         int expected = 10; // эталонное заранее вычисленное значение
         int actual = MathUtil.sum(5, 5);
@@ -56,11 +62,7 @@ public class TestMathUtil {
                 () -> {MathUtil.divide(7, 0);});
     }
 
-    @Test
-    void testSort() {
-        assertArrayEquals(new int[] {1,2,3,4,5,6,7,8},
-                mathUtil.sort(new int[] {8,3,2,5,4,6,7,1}));
-    }
+
 
     @AfterAll
     static void destroy() {

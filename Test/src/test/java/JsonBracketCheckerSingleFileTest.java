@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class JsonBracketCheckerSingleFileTest {
     // Укажите здесь путь к вашему тестовому файлу
-    private static final String TEST_JSON_FILE = "test.json";
+    private static final String TEST_JSON_FILE = "bookings.json";
 
     @Test
     void testJsonBrackets() throws IOException {
@@ -17,7 +17,7 @@ class JsonBracketCheckerSingleFileTest {
         // 2. Запуск проверки
         int result = JsonBracketChecker.checkBrackets(TEST_JSON_FILE);
 
-        // Пример проверки (можно закомментировать/изменить)
+
         assertEquals(0, result, "Файл содержит ошибки в скобках");
     }
 }

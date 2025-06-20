@@ -10,7 +10,7 @@ public class Client {
     public static void main(String[] args) {
 
         try {
-            Socket socket = new Socket("127.0.0.1", 50000);
+            Socket socket = new Socket("127.0.0.1", 5000);
             // Поток для чтения данных от сервера
             InputStream is = socket.getInputStream();
             // Поток для передачи данных серверу

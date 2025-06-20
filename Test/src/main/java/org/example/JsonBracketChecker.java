@@ -18,6 +18,9 @@ public class JsonBracketChecker {
         if (filename == null) {
             throw new NullPointerException("Имя файла не может быть null");
         }
+        if (!filename.contains("json")){
+            throw new IllegalArgumentException("Это не джейсон файл");
+        }
 
         File file = new File(filename);
 
@@ -65,11 +68,11 @@ public class JsonBracketChecker {
         }
     }
 
-    /**
-     * Проверяет допустимость символа в JSON
-     */
+
+//    Проверяет допустимость символа в JSON
+
     private static boolean isValidJsonChar(char c) {
         return Character.isLetterOrDigit(c)  // Буквы и цифры
-                || "{}[]:,\"\n\r\t -_".indexOf(c) != -1; // Допустимые спецсимволы
+                || "{}[]./():,\"\n\r\t -_".indexOf(c) != -1; // Допустимые спецсимволы
     }
 }

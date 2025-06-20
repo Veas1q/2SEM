@@ -17,8 +17,6 @@ public class ServerMessenger {
             ServerSocket serverSocket = new ServerSocket(50000);
             // Ожидаем подключения клиента
             Socket clientSocket = serverSocket.accept();
-            System.out.println(clientSocket.getInetAddress());
-            System.out.println(clientSocket.getPort());
             // Дождались клиента
             // Поток для чтения данных от клиента
             DataInputStream is = new DataInputStream(clientSocket.getInputStream());
@@ -32,6 +30,7 @@ public class ServerMessenger {
                 byte[] buffer = new byte[size]; // готовим буфер нужного размера
                 is.read(buffer); // читаем сообщение
                 String message = new String(buffer);
+                System.out.print("Клиент: ");
                 System.out.println(message);
 
                 if(message.equals("exit")) {
